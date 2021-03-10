@@ -1,0 +1,31 @@
+{
+	"name": "github1s",
+	"description": "Forwards you to github1s automatically!",
+	"version": "1.0",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js"
+	},
+	"permissions": [ "activeTab", "scripting" ],
+	"action": {
+		"default_icon": {
+			"16": "/images/github16.png",
+			"32": "/images/github32.png",
+			"48": "/images/github48.png",
+			"128": "/images/github128.png"
+		}
+	},
+	"icons": {
+		"16": "/images/github16.png",
+		"32": "/images/github32.png",
+		"48": "/images/github48.png",
+		"128": "/images/github128.png"
+	},
+
+	"content_scripts": [
+		{
+			"matches": [ "*://github.com/*" ],
+			"js": [ "domUtil.js" ]
+		}
+	]
+}
